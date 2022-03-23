@@ -23,16 +23,19 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             Console.WriteLine("1. Manual or 2. File Input? (Please put 1 or 2) ");
             response = Console.ReadLine();
-            
+
+            string text = "";
+
             if (response == "1")
             {
-                input.manualTextInput();
+                text = input.manualTextInput();
             }
             else if (response == "2")
             {
                 Console.WriteLine("Please input the name of the file: ");
                 string file = Console.ReadLine();
-                input.fileTextInput(file);
+                text = input.fileTextInput(file);
+                Console.WriteLine(text);
             }
             else
             {
@@ -44,11 +47,16 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             Analyse analyse = new Analyse();
 
+            analyse.analyseText(text);
+
             //Receive a list of integers back
 
 
             //Report the results of the analysis
 
+            Report report = new Report();
+
+            report.outputConsole(parameters);
 
             //TO ADD: Get the frequency of individual letters?
 
