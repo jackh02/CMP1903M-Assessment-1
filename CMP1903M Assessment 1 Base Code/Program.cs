@@ -11,30 +11,28 @@ namespace CMP1903M_Assessment_1_Base_Code
     {
         static void Main()
         {
-            //Local list of integers to hold the first five measurements of the text
-            List<int> parameters = new List<int>();
-
             //Create 'Input' object
             //Get either manually entered text, or text from a file
 
-            Input input = new Input();
+            Input input = new();
 
-            string response = null;
+            string response;
 
-            Console.WriteLine("1. Manual or 2. File Input? (Please put 1 or 2) ");
+            Console.WriteLine("1. Do you want to enter the text via the keyboard?");
+            Console.WriteLine("2.Do you want to read in the text from a file?");
             response = Console.ReadLine();
 
             string text = "";
 
             if (response == "1")
             {
-                text = input.manualTextInput();
+                text = input.ManualTextInput();
             }
             else if (response == "2")
             {
                 Console.WriteLine("Please input the name of the file: ");
                 string file = Console.ReadLine();
-                text = input.fileTextInput(file);
+                text = input.FileTextInput(file);
                 Console.WriteLine(text);
             }
             else
@@ -45,16 +43,16 @@ namespace CMP1903M_Assessment_1_Base_Code
             //Create an 'Analyse' object
             //Pass the text input to the 'analyseText' method
 
-            Analyse analyse = new Analyse();
+            Analyse analyse = new();
 
-            analyse.analyseText(text);
+            List<int> parameters = analyse.AnalyseText(text);
 
             //Receive a list of integers back
 
 
             //Report the results of the analysis
 
-            Report report = new Report();
+            Report report = new();
 
             report.outputConsole(parameters);
 
