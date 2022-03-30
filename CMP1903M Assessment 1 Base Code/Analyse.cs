@@ -27,7 +27,8 @@ namespace CMP1903M_Assessment_1_Base_Code
             int numUpper;
             //5. Number of lower case letters
             int numLower;
-
+            
+            //Creates a new list to store the measurements
             var values = new List<int>();
 
             //Initialise all the values in the list to '0'
@@ -36,24 +37,36 @@ namespace CMP1903M_Assessment_1_Base_Code
                 values.Add(0);
             }
 
+            //Runs the AnalyseSentences function and sets the value of the numSentences variable to the output
             numSentences = AnalyseSentences(input);
+            //Sets the first item in the list to the value of numSentences
             values[0] = numSentences;
 
+            //Runs the AnalyseVowels function and sets the value of the numVowels variable to the output
             numVowels = AnalyseVowels(input);
+            //Sets the second item in the list to the value of numVowels
             values[1] = numVowels;
 
+            //Runs the AnalyseConsonants function and sets the value of the numConsonants variable to the output
             numConsonants = AnalyseConsonants(input);
+            //Sets the third item in the list to the value of numConsonants
             values[2] = numConsonants;
 
+            //Runs the AnalyseUpper function and sets the value of the numUpper variable to the output
             numUpper = AnalyseUpper(input);
+            //Sets the fourth item in the list to the value of numUpper
             values[3] = numUpper;
 
+            //Runs the AnalyseLower function and sets the value of the numLower variable to the output
             numLower = AnalyseLower(input);
+            //Sets the fifth item in the list to the value of numLower
             values[4] = numLower;
 
+            //Returns the value to where it was called in the Program class
             return values;
         }
 
+        //Counts the number of full stops, exclamation marks, and question marks there are in the text
         static int AnalyseSentences(string input)
         {
             int numSentences = 0;
@@ -61,7 +74,7 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             for(int i = 0; i<chars.Length; i++)
             {
-                if(chars[i].ToString() == ".")
+                if(chars[i].ToString() == "." || chars[i].ToString() == "!" || chars[i].ToString() == "?")
                 {
                     numSentences += 1;
                 }
@@ -70,6 +83,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             return numSentences;
         }
 
+        //Counts the number of lower-case and upper-case vowels there are in the text
         static int AnalyseVowels(string input)
         {
             int numVowels = 0;
@@ -87,6 +101,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             return numVowels;
         }
 
+        //Counts the number of lower-case and upper-case consonants there are in the text
         static int AnalyseConsonants(string input)
         {
             int numConsonants = 0;
@@ -104,6 +119,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             return numConsonants;
         }
 
+        //Counts the number of upper-case letters there are in the text
         static int AnalyseUpper(string input)
         {
             int numUpper = 0;
@@ -121,6 +137,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             return numUpper;
         }
 
+        //Counts the number of lower-case letters there are in the text
         static int AnalyseLower(string input)
         {
             int numLower = 0;

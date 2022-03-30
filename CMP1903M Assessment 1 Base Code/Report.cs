@@ -8,10 +8,8 @@ namespace CMP1903M_Assessment_1_Base_Code
 {
     class Report
     {
-        //Handles the reporting of the analysis
-        //Maybe have different methods for different formats of output?
-        //eg.   public void outputConsole(List<int>)
-        public void outputConsole(List<int>input)
+        //Formats the values provided by the input and outputs the data to the console
+        public void OutputConsole(List<int>input)
         {
             Console.WriteLine("");
             Console.WriteLine("Number of sentences: " + input[0]);
