@@ -22,6 +22,11 @@ namespace CMP1903M_Assessment_1_Base_Code
             //Define parameters list
             List<int> parameters;
 
+            string message = "Please ensure 'CMP1903M Assessment 1 Test File.txt' is in the bin folder.";
+
+            Console.WriteLine(message);
+            Console.WriteLine();
+
             //Define a boolean for the while loop
             bool isLoop = true;
 
@@ -30,7 +35,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             {
                 //Ask the user which function they would like to perform
                 Console.WriteLine("1. Do you want to enter the text via the keyboard?");
-                Console.WriteLine("2.Do you want to read in the text from a file?");
+                Console.WriteLine("2. Do you want to read in the text from a file?");
 
                 //Sets the response variable to the user-inputted response
                 response = Console.ReadLine();
